@@ -1,0 +1,43 @@
+{
+  "compilerOptions": {
+    "outDir": "build",
+    "noImplicitAny": true,
+    "module": "ESNext",
+    "target": "ESNext",
+    "jsx": "react-jsx",
+    "allowJs": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    //    for absolute paths
+    "baseUrl": ".",
+    "paths": {
+      "*": ["./src/*"],
+      "@/*": [
+        "./src/*"
+      ],
+      "react": [ "./node_modules/@types/react"]
+    },
+    "types": ["node"],
+    //    setting for es6 imports
+    "esModuleInterop": true,
+
+    /*
+        for using default imports
+        instead of using commonjs import with 'require' function
+    */
+    "allowSyntheticDefaultImports": true
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS",
+      "types": ["node"]
+    }
+  },
+
+  "include": [
+    "./config/jest/setupTests.ts",
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
+    "vite-env.d.ts"
+  ]
+}
